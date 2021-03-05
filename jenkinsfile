@@ -1,24 +1,18 @@
 pipeline {
-  agent {
-      node {
-          label "ubu01"
-          
-      }
+    agent any
+    stages {
+        stage("Build") {
+            steps {
+                sh "mvn -version"
+                sh "mvn clean install"
+            }
+        }
 
-  }
+    }
 
-stages {
-    stage("build") {
-        steps {
-            sh "mvn -version"
-            sh "mvn clean install"
+    post {
+        always {
+            cleanWs()
         }
     }
-}
-
-post {
-    always {
-        cleanWs()
-    }
-}
 }
