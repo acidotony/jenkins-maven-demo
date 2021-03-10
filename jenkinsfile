@@ -1,7 +1,7 @@
 
 pipeline {
   environment {
-    registry = "acidotony/jenkinsmavendemo"
+    registry = "jenkinsmavendemo"
     registryCredential = 'dockerhub'
     dockerImage = ''
   }
