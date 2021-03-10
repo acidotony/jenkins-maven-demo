@@ -1,0 +1,24 @@
+
+pipeline {
+    environment {
+        JAVA_TOOL_OPTIONS = "-Duser.home=/home/tonymac"
+    }
+    agent {
+        dockerfile {
+            label "docker"
+            
+        }
+    }
+
+    stages {
+        stage("Build") {
+            steps {
+                sh "ssh -V"
+                sh "mvn -version"
+                sh "mvn clean install"
+            }
+        }
+    }
+
+    
+}
