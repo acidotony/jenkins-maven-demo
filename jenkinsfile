@@ -32,7 +32,7 @@ pipeline {
     stage('run image'){
        steps{
            script {
-               sh 'ssh tonymac@192.168.1.31 "ls -la /home/tonymac/"'
+               echo  "ssh tonymac@192.168.1.31 "ls -la /home/tonymac/""
 
            }
        }
