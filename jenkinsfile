@@ -28,6 +28,16 @@ pipeline {
         }
       }
     }
+
+    stage('run image'){
+       steps{
+           script {
+               echo "comando docker run"
+               
+           }
+       }
+
+    }
     
   }
 }
