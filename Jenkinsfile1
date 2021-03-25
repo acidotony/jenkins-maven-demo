@@ -23,7 +23,7 @@ pipeline {
           }
           axis {
             name "MAVEN"
-            value "3.6.3"
+            values "3.6.3"
           }
         }
       }
