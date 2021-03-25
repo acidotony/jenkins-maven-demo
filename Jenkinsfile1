@@ -26,20 +26,19 @@ pipeline {
             values "3.6.3"
           }
         }
-      }
-    //}
-  }        
-  //stages {
-    stage('Build') {
-      steps {
-        sh "mavn -DskipTests clean package"
-      }
-    }  
-    stage('test') {
-      steps {
-        sh "mvn test -P coverage"
-      }
+        stages {
+          stage('Build') {
+            steps {
+              sh "mavn -DskipTests clean package"
+            }
+          }   
+          stage('test') {
+            steps {
+              sh "mvn test -P coverage"
+            }
+          }
+        }
+      }  
     }
-  //}
   }
 }
